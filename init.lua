@@ -43,8 +43,7 @@ minetest.register_node("bizzaro:water_flowing_block", {
 minetest.register_node("bizzaro:lava_source_block", {
 	description = "Lava Source Block",
     drawtype = "glasslike",
-    alpha = 160,
-	paramtype = "light",
+    paramtype = "light",
     light_source = default.LIGHT_MAX - 1,
 	is_ground_content = false,
 	post_effect_color = {a = 191, r = 255, g = 64, b = 0},
@@ -64,8 +63,7 @@ minetest.register_node("bizzaro:lava_source_block", {
 minetest.register_node("bizzaro:lava_flowing_block", {
 	description = "Lava Flowing Block",
     drawtype = "glasslike",
-    alpha = 160,
-	paramtype = "light",
+    paramtype = "light",
     light_source = default.LIGHT_MAX - 1,
 	is_ground_content = false,
 	post_effect_color = {a = 191, r = 255, g = 64, b = 0},
@@ -73,6 +71,46 @@ minetest.register_node("bizzaro:lava_flowing_block", {
 	sounds = default.node_sound_water_defaults(),
 	tiles = {{
 			name = "default_lava_flowing_animated.png",
+			animation = {
+				type = "vertical_frames",
+				aspect_w = 16,
+				aspect_h = 16,
+				length = 3.3,
+			}
+		}
+}})
+
+minetest.register_node("bizzaro:water_leaves", {
+	description = "Water Leaves",
+    drawtype = "allfaces",
+    alpha = 120,
+    paramtype = "light",
+    is_ground_content = false,
+	post_effect_color = {a = 103, r = 30, g = 60, b = 90},
+	groups = {snappy = 3, leafdecay = 3, leaves = 1},
+	sounds = default.node_sound_leaves_defaults(),
+	tiles = {{
+			name = "default_water_leaves.png",
+			animation = {
+				type = "vertical_frames",
+				aspect_w = 16,
+				aspect_h = 16,
+				length = 3,
+			}
+		}
+}})
+
+minetest.register_node("bizzaro:lava_leaves", {
+	description = "Lava Leaves",
+    drawtype = "allfaces",
+    paramtype = "light",
+    light_source = default.LIGHT_MAX - 1,
+	is_ground_content = false,
+	post_effect_color = {a = 191, r = 255, g = 64, b = 0},
+	groups = {snappy = 3, leafdecay = 3, leaves = 1},
+	sounds = default.node_sound_leaves_defaults(),
+	tiles = {{
+			name = "default_lava_leaves.png",
 			animation = {
 				type = "vertical_frames",
 				aspect_w = 16,
